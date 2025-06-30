@@ -1,2 +1,2 @@
 # atritoboutique
-Online clotihin store using nextjs
+Online clotihing store using nextjs
