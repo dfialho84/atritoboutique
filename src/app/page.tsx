@@ -1,20 +1,8 @@
+import Image from "next/image";
+
 export default function Home() {
     return (
-        <main className="min-h-screen bg-white text-neutral-900">
-            <header className="flex items-center justify-between px-6 py-4 border-b shadow-sm">
-                <h1 className="text-6xl font-andes">Atrito</h1>
-                <nav className="space-x-6 text-sm font-medium">
-                    <a href="#" className="hover:text-primary">
-                        Início
-                    </a>
-                    <a href="#" className="hover:text-primary">
-                        Coleção
-                    </a>
-                    <a href="#" className="hover:text-primary">
-                        Contato
-                    </a>
-                </nav>
-            </header>
+        <div className="min-h-screen bg-white text-neutral-900">
             <section className="bg-gray-100 text-center py-20 px-6">
                 <h2 className="text-4xl fonr-bold mb-4">
                     Nova coleção de primavera
@@ -33,11 +21,18 @@ export default function Home() {
                             className="group rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all"
                         >
                             <div className="aspect-square relative overflow-hidden bg-red-500">
-                                <img
+                                <Image
+                                    src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=400&fit=crop"
+                                    alt="Coleção de primavera"
+                                    width={400}
+                                    height={400}
+                                    className="object-cover group-hover:scale-105 transition-transform w-full h-full"
+                                />
+                                {/* <img
                                     src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=400&fit=crop"
                                     alt="Coleção de primavera"
                                     className="object-cover group-hover:scale-105 transition-transform w-full h-full"
-                                />
+                                /> */}
                             </div>
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold">
@@ -54,11 +49,6 @@ export default function Home() {
                     ))}
                 </div>
             </section>
-
-            <footer className="text-center text-sm text-gray-500 py-6 border-t">
-                © {new Date().getFullYear()} Atrito. Todos os direitos
-                reservados.
-            </footer>
-        </main>
+        </div>
     );
 }
