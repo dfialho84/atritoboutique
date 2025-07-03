@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "Atrito Boutique",
@@ -15,13 +14,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <ClerkProvider>
+        <ClerkProvider localization={ptBR}>
             <html lang="pt-BR">
                 <body>
                     <main className="min-h-screen bg-white text-neutral-900">
-                        <Navbar />
                         {children}
-                        <Footer />
                     </main>
                 </body>
             </html>

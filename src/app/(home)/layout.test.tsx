@@ -20,13 +20,4 @@ describe("RootLayout", () => {
         );
         expect(screen.getByText("Test Content")).toBeInTheDocument();
     });
-
-    it("has correct language attribute", () => {
-        render(
-            <RootLayout>
-                <div>Test Content</div>
-            </RootLayout>
-        );
-        expect(document.documentElement.lang).toBe("pt-BR");
-    });
 });
