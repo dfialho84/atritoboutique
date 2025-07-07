@@ -1,8 +1,7 @@
-import { render } from "@testing-library/react";
-import RootLayout from "./layout";
+import { render, screen } from "@testing-library/react";
 import { expect } from "@jest/globals";
 
-import { screen } from "@testing-library/react";
+import RootLayout from "./layout";
 
 jest.mock("@clerk/nextjs", () => ({
     ClerkProvider: ({
@@ -12,8 +11,8 @@ jest.mock("@clerk/nextjs", () => ({
     }>) => <>{children}</>,
 }));
 
-describe("Layout", () => {
-    it("renders the layout with children", () => {
+describe("RootLayout", () => {
+    it("renders the main layout with children", () => {
         render(
             <RootLayout>
                 <div>Test Content</div>

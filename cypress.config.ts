@@ -5,21 +5,20 @@ import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-prepro
 
 export default defineConfig({
     e2e: {
-        async setupNodeEvents(on, config) {
-            const pluginConfig = {
-                ...config,
-                stepDefinitions: "cypress/e2e/[filepath].js",
-            } as any;
-            await addCucumberPreprocessorPlugin(on, pluginConfig);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        async setupNodeEvents(on: any, config: any) {
+            await addCucumberPreprocessorPlugin(on, config);
+
             on(
                 "file:preprocessor",
                 createBundler({
                     plugins: [createEsbuildPlugin(config)],
                 })
             );
+
             return config;
         },
         specPattern: "cypress/e2e/**/*.feature",
         baseUrl: "http://localhost:3000",
-    },
+    } as any, // eslint-disable-line @typescript-eslint/no-explicit-any
 });

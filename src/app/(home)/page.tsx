@@ -20,7 +20,7 @@ export default function Home() {
                             key={num}
                             className="group rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all"
                         >
-                            <div className="aspect-square relative overflow-hidden bg-red-500">
+                            <div className="aspect-square relative overflow-hidden">
                                 <Image
                                     src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=400&fit=crop"
                                     alt="Coleção de primavera"
@@ -28,11 +28,6 @@ export default function Home() {
                                     height={400}
                                     className="object-cover group-hover:scale-105 transition-transform w-full h-full"
                                 />
-                                {/* <img
-                                    src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=400&fit=crop"
-                                    alt="Coleção de primavera"
-                                    className="object-cover group-hover:scale-105 transition-transform w-full h-full"
-                                /> */}
                             </div>
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold">
