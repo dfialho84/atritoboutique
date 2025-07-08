@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function RootLayout({
+export default function HomeLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;

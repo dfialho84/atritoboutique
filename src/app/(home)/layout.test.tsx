@@ -1,22 +1,20 @@
 import { render, screen } from "@testing-library/react";
 import { expect } from "@jest/globals";
 
-import RootLayout from "./layout";
+import HomeLayout from "./layout";
 
-jest.mock("@clerk/nextjs", () => ({
-    ClerkProvider: ({
-        children,
-    }: Readonly<{
-        children: React.ReactNode;
-    }>) => <>{children}</>,
-}));
+jest.mock("../../components/Navbar", () => {
+    return function MockNavbar() {
+        return <div>Mock Navbar</div>;
+    };
+});
 
-describe("RootLayout", () => {
+describe("HomeLayout", () => {
     it("renders the main layout with children", () => {
         render(
-            <RootLayout>
+            <HomeLayout>
                 <div>Test Content</div>
-            </RootLayout>
+            </HomeLayout>
         );
         expect(screen.getByText("Test Content")).toBeInTheDocument();
     });
