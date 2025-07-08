@@ -16,7 +16,13 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body>
-                <ClerkProvider localization={ptBR}>
+                <ClerkProvider
+                    localization={ptBR}
+                    afterSignOutUrl="/"
+                    signInUrl="/signup"
+                    signUpForceRedirectUrl="/"
+                    signInForceRedirectUrl="/"
+                >
                     <main className="min-h-screen bg-white text-neutral-900">
                         {children}
                     </main>

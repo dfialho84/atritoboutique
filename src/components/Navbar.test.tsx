@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { expect } from "@jest/globals";
 import Navbar from "./Navbar";
+import { UserButton } from "@clerk/nextjs";
 
 type SignProps = {
     children: React.ReactNode;
@@ -13,7 +14,7 @@ let signedInMock: SignFN = ({ children }: SignProps) => <div>{children}</div>;
 jest.mock("@clerk/nextjs", () => ({
     SignedOut: ({ children }: SignProps) => signedOutMock({ children }),
     SignedIn: ({ children }: SignProps) => signedInMock({ children }),
-    useUser: () => ({ user: null }),
+    UserButton: () => <div>User Button</div>,
 }));
 
 describe("Navbar", () => {
@@ -38,7 +39,7 @@ describe("Navbar", () => {
         it("renders the register link", () => {
             render(<Navbar />);
             expect(
-                screen.getByRole("link", { name: "Entrar / Registrar-se" })
+                screen.getByRole("link", { name: /registrar-se/i })
             ).toHaveTextContent("Entrar / Registrar-se");
         });
 
@@ -56,8 +57,17 @@ describe("Navbar", () => {
     });
 
     describe("when user is signed in", () => {
-        it("fails", () => {
-            expect(true).toBe(false);
+        beforeEach(() => {
+            signedInMock = ({ children }: SignProps) => {
+                return <div>{children}</div>;
+            };
+            signedOutMock = () => null;
+        });
+
+        it("The components inside SignedIn must be rendered", () => {
+            render(<Navbar />);
+
+            expect(screen.getByText("User Button")).toBeInTheDocument();
         });
     });
 });
