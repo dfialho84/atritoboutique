@@ -1,7 +1,9 @@
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("Eu faço o login no sistema", () => {
-    cy.loginClerk();
+    const username = Cypress.env("username");
+    const password = Cypress.env("password");
+    cy.loginClerk({ username, password });
 });
 
 When("Eu clico no meu avatar no topo da tela", () => {

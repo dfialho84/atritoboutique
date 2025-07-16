@@ -1,6 +1,29 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import {
+    clerkMiddleware,
+    ClerkMiddlewareAuth,
+    createRouteMatcher,
+} from "@clerk/nextjs/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export default clerkMiddleware();
+const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
+
+export async function adminProtection(
+    auth: ClerkMiddlewareAuth,
+    req: NextRequest
+) {
+    const { sessionClaims } = await auth();
+    if (
+        isAdminRoute(req) &&
+        (!sessionClaims || sessionClaims.metadata.role !== "admin")
+    ) {
+        const url = req.nextUrl.clone();
+        url.pathname = "";
+        url.searchParams.set("error", "only-admin");
+        return NextResponse.redirect(url);
+    }
+}
+
+export default clerkMiddleware(adminProtection);
 
 export const config = {
     matcher: [

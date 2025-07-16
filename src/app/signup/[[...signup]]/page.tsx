@@ -2,19 +2,19 @@ import { SignIn, SignUp } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
+const signUpAppearance = {
+    elements: {
+        footerAction: {
+            display: "none",
+        },
+    },
+};
+
 export default async function SignUpPage() {
     const user = await currentUser();
     if (user) {
-        redirect("/");
+        return redirect("/");
     }
-
-    const signUpAppearance = {
-        elements: {
-            footerAction: {
-                display: "none",
-            },
-        },
-    };
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen gap-8 py-8">

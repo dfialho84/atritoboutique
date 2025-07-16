@@ -26,16 +26,24 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
 
-Cypress.Commands.add("loginClerk", () => {
-    cy.visit("/signup");
-    const email = Cypress.env("username");
-    cy.get("#identifier-field").type(email);
-    cy.get(".cl-signIn-root .cl-formButtonPrimary")
-        .contains("Continuar")
-        .click();
-    const password = Cypress.env("password");
-    cy.get(".cl-signIn-root #password-field").type(password);
-    cy.get(".cl-signIn-root .cl-formButtonPrimary")
-        .contains("Continuar")
-        .click();
-});
+type LoginCredentials = {
+    username: string;
+    password: string;
+};
+
+Cypress.Commands.add(
+    "loginClerk",
+    ({ username, password }: LoginCredentials) => {
+        cy.visit("/signup");
+        // const email = Cypress.env("username");
+        cy.get("#identifier-field").type(username);
+        cy.get(".cl-signIn-root .cl-formButtonPrimary")
+            .contains("Continuar")
+            .click();
+        // const password = Cypress.env("password");
+        cy.get(".cl-signIn-root #password-field").type(password);
+        cy.get(".cl-signIn-root .cl-formButtonPrimary")
+            .contains("Continuar")
+            .click();
+    }
+);

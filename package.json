@@ -11,18 +11,21 @@
         "e2e:run": "cypress run",
         "test": "jest",
         "test:watch": "jest --watch",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "jest --coverage",
+        "test:mutation": "stryker run"
     },
     "dependencies": {
         "@clerk/localizations": "^3.17.2",
         "@clerk/nextjs": "^6.23.2",
         "next": "15.3.4",
         "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "react-dom": "^19.0.0",
+        "sonner": "^2.0.6"
     },
     "devDependencies": {
         "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
         "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+        "@stryker-mutator/jest-runner": "^9.0.1",
         "@tailwindcss/postcss": "^4",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.6.3",

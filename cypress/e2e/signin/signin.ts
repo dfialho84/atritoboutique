@@ -42,5 +42,5 @@ Then("Eu clico avatar no topo da tela", () => {
 });
 
 Then("Eu vejo o meu nome", () => {
-    cy.get(".cl-userPreview").should("contain.text", "Diego Fialho");
+    cy.get(".cl-userPreview").should("contain.text", "diego");
 });
