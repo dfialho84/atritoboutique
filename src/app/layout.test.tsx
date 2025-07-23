@@ -42,7 +42,10 @@ describe("Layout", () => {
 describe("Metadata", () => {
     it("has the correct title and description", () => {
         expect(metadata).toEqual({
-            title: "Atrito Boutique",
+            title: {
+                template: "%s | Atrito Boutique",
+                default: "Atrito Boutique",
+            },
             description: "Loja de roupas e acessórios",
         });
     });

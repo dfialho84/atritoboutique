@@ -9,4 +9,5 @@ declare global {
             role?: Roles;
         };
     }
+    type Optional<T> = T | undefined | null;
 }

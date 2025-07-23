@@ -37,6 +37,7 @@ const config: Config = {
     // coveragePathIgnorePatterns: [
     //   "/node_modules/"
     // ],
+    coveragePathIgnorePatterns: ["/node_modules/", "/src/components/ui"],
 
     // Indicates which provider should be used to instrument code for coverage
     coverageProvider: "v8",

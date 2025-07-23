@@ -70,6 +70,29 @@ describe("UrlToaster", () => {
         );
     });
 
+    it("should not call a toast or router.replace if there is no error in search params", async () => {
+        const getMock = jest.fn().mockReturnValue(undefined); // explícito
+        const toStringMock = jest.fn();
+        const replaceMock = jest.fn();
+
+        useSearchParamsMock.mockImplementation(() => ({
+            get: getMock,
+            toString: toStringMock,
+        }));
+
+        useRouterMock.mockImplementation(() => ({
+            replace: replaceMock,
+        }));
+
+        const UrlToaster = (await import("./UrlToaster")).default;
+
+        render(<UrlToaster />);
+
+        expect(getMock).toHaveBeenCalledWith("error");
+        expect(toastMock.error).not.toHaveBeenCalled();
+        expect(replaceMock).not.toHaveBeenCalled(); // 🧨 isso é o que denuncia a mutação
+    });
+
     it("should replace the search params is a valid key", async () => {
         useSearchParamsMock.mockImplementation(() => ({
             get: jest.fn().mockReturnValue("only-admin"),

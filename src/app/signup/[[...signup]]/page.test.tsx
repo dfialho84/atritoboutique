@@ -1,9 +1,11 @@
 import { expect } from "@jest/globals";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { ClerkLoaderProps } from "../../../components/auth/ClerkLoader";
 
 const signUpMock = jest.fn(() => <div>Sign Up Component</div>);
 
 jest.mock("@clerk/nextjs", () => ({
+    __esModule: true,
     SignUp: signUpMock,
     SignIn: () => <div>Sign In Component</div>,
     ClerkProvider: ({
@@ -19,17 +21,23 @@ jest.mock("next/navigation", () => ({
     redirect: redirectMock,
 }));
 
-const currentUserMock = jest.fn();
+const currentUserMock = jest.fn().mockResolvedValue(null);
 
 jest.mock("@clerk/nextjs/server", () => ({
+    __esModule: true,
     currentUser: currentUserMock,
+}));
+
+jest.mock("../../../components/auth/ClerkLoader", () => ({
+    __esModule: true,
+    default: ({ children }: ClerkLoaderProps) => <>{children}</>,
 }));
 
 describe("SignUpPage", () => {
     it("should not show the footer of the login form", async () => {
         const SignUpPage = (await import("./page")).default;
         const component = await SignUpPage();
-        await render(component);
+        render(component);
 
         expect(signUpMock).toHaveBeenCalledTimes(1);
         const props = (signUpMock as jest.Mock).mock.calls[0][0];
