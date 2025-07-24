@@ -13,7 +13,7 @@ export default function AdminOnly({ children }: AdminOnlyProps) {
     }
 
     const adminUser =
-        auth.isSignedIn && auth.sessionClaims?.metadata.role === "admin";
+        auth.isSignedIn && auth.sessionClaims.metadata.role === "admin";
 
     return adminUser ? <>{children}</> : null;
 }

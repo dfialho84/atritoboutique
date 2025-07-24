@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     description: "Loja de roupas e acessórios",
 };
 
-export default function AdminPage() {
-    const breadcrumbs = [
-        { label: "Home", href: "/" },
-        { label: "Administração", href: "/admin" },
-    ];
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Administração", href: "/admin" },
+];
 
+export default function AdminPage() {
     return (
         <div className="container mx-auto mt-4">
             <Suspense>

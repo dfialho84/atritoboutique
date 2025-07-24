@@ -20,5 +20,6 @@ export default defineConfig({
         },
         specPattern: "cypress/e2e/**/*.feature",
         baseUrl: "http://localhost:3000",
+        video: true,
     } as any, // eslint-disable-line @typescript-eslint/no-explicit-any
 });

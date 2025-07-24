@@ -65,3 +65,21 @@ describe("AdminBreadcrumbs", () => {
         ]);
     });
 });
+
+describe("AdminBreadcrumbsSetter", () => {
+    it("should call setBreadcrumbs when props change", async () => {
+        const mockSetBreadcrumbs = jest.fn();
+        useBreadcrumbContextMock.mockReturnValue([[], mockSetBreadcrumbs]);
+
+        const { AdminbreadcrumbsSetter } = await import("./AdminBreadcrumbs");
+
+        const testBreadcrumbs = [
+            { label: "Home", href: "/" },
+            { label: "Admin", href: "/admin" },
+        ];
+
+        render(<AdminbreadcrumbsSetter breadcrombs={testBreadcrumbs} />);
+
+        expect(mockSetBreadcrumbs).toHaveBeenCalledWith(testBreadcrumbs);
+    });
+});

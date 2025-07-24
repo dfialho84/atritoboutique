@@ -50,7 +50,7 @@ export default function AdminBreadcrumbs() {
     );
 }
 
-type BreadcrumbContextProps = {
+export type BreadcrumbContextProps = {
     breadcrombs: Item[];
 };
 
