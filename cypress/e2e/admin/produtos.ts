@@ -1,4 +1,4 @@
-import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Given } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("Eu estou autenticado como um administrador", () => {
     const username = Cypress.env("admin_username");

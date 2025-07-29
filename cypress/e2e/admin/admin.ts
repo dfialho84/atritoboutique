@@ -52,5 +52,5 @@ Given("Eu aceeo a seção administrativa a partir da página principal", () => {
 });
 
 Then("Eu vejo o título {string}", (title: string) => {
-    cy.get("h1").should("have.text", title);
+    cy.get("h2").should("have.text", title);
 });
