@@ -11,7 +11,9 @@ export default function AdminLayout({
         <BreadcrumbProvider>
             <div className="flex flex-col min-h-screen">
                 <AdminNavbar />
-                <div className="flex-1 container mx-auto">{children}</div>
+                <div className="flex-1 container mx-auto flex flex-col">
+                    {children}
+                </div>
                 <Footer />
             </div>
         </BreadcrumbProvider>
