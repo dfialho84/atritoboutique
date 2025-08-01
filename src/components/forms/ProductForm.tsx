@@ -3,9 +3,13 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
-import { useForm, UseFormReturn } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import FormInput from "./FormInput";
 import FormTextArea from "./FormTextArea";
+import { Button } from "../ui/button";
+import FormCheck from "./FormCheck";
+import FormMoneyInput from "./FormMoneyInput";
+import FormImageUploader from "./FormImageUploader";
 
 /*
 export type Photo = {
@@ -29,45 +33,78 @@ export type Product = {
 */
 
 const productSchema = z.object({
-    name: z.string().min(3, "Nome é obrigatório"),
+    name: z.string().min(3, "O Nome deve ter pelo menos 3 caracteres"),
     description: z.string().min(10, "Descrição é obrigatória"),
-    priceInCents: z.number().min(0, "Preço deve ser um valor positivo"),
+    priceInCents: z
+        .string()
+        .transform((val) => Number(val.replace(",", ".")))
+        .refine((val) => !isNaN(val), { message: "Preço inválido" })
+        .transform((val) => Math.round(val * 100))
+        .refine((val) => val >= 0, {
+            message: "Preço deve ser um valor positivo",
+        })
+        .transform((val) => val.toString()),
     isActive: z.boolean(),
 });
 
-type ProductSchema = z.infer<typeof productSchema>;
+const productInternalSchema = z.object({
+    name: z.string().min(3, "O Nome deve ter pelo menos 3 caracteres"),
+    description: z.string().min(10, "Descrição é obrigatória"),
+    priceInCents: z.number().positive("Preço deve ser um valor positivo"),
+    isActive: z.boolean(),
+});
+
+type ProductFormInput = z.infer<typeof productSchema>;
 
 export default function ProductForm() {
-    const form: UseFormReturn<ProductSchema> = useForm<ProductSchema>({
+    const form = useForm<ProductFormInput, undefined, ProductFormInput>({
         resolver: zodResolver(productSchema),
         defaultValues: {
             name: "",
             description: "",
-            priceInCents: 0,
+            priceInCents: "0",
             isActive: true,
         },
     });
 
-    function onSubmit(data: ProductSchema) {
-        console.log("Form submitted with data:", data);
+    function onSubmit(data: ProductFormInput) {
+        console.log("Dados do formulário para o backend:", data);
+        console.log("Tipo de priceInCents:", typeof data.priceInCents); // Isso vai imprimir 'number'
+        const x = productInternalSchema.parse(data);
+        console.log("Dados validados:", x);
     }
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form
+                className="flex flex-col gap-8"
+                onSubmit={form.handleSubmit((data) => {
+                    onSubmit(data);
+                })}
+            >
                 <FormInput
                     form={form}
                     name="name"
                     label="Nome do Produto"
                     placeholder="Nome"
-                    description="Nome do produto"
                 />
                 <FormTextArea
-                    className="mt-8"
                     form={form}
                     name="description"
                     label="Descrição do Produto"
                     placeholder="Descrição"
                 />
+                <FormMoneyInput
+                    form={form}
+                    name="priceInCents"
+                    label="Preço"
+                    placeholder="Preço"
+                />
+                <FormCheck form={form} name="isActive" label="Ativo" />
+                <FormImageUploader name="images" />
+                <div className="flex justify-start gap-4 bg-zinc-100 p-4 rounded-lg">
+                    <Button>Salvar</Button>
+                    <Button variant="outline">Cancelar</Button>
+                </div>
             </form>
         </Form>
     );

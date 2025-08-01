@@ -13,25 +13,37 @@ import {
     Path,
 } from "react-hook-form";
 
-type FormFieldRenderFn<T extends FieldValues> = (params: {
-    field: ControllerRenderProps<T, Path<T>>;
+type FormFieldRenderFn<TFieldValues extends FieldValues> = (params: {
+    field: ControllerRenderProps<TFieldValues, Path<TFieldValues>>;
     placeholder?: string;
 }) => React.ReactNode;
 
-export type FormFieldProps<T extends FieldValues> = {
-    form: UseFormReturn<T>;
-    name: Path<T>;
+export type FormFieldProps<
+    TFieldValues extends FieldValues = FieldValues,
+    TContext = undefined,
+    TTransformedValues extends TFieldValues = TFieldValues
+> = {
+    form: UseFormReturn<TFieldValues, TContext, TTransformedValues>;
+    name: Path<TFieldValues>;
     label: string;
     placeholder?: string;
     description?: string;
     className?: string;
 };
 
-type FormFieldWrapperProps<T extends FieldValues> = {
-    render: FormFieldRenderFn<T>;
-} & FormFieldProps<T>;
+type FormFieldWrapperProps<
+    TFieldValues extends FieldValues = FieldValues,
+    TContext = undefined,
+    TTransformedValues extends TFieldValues = TFieldValues
+> = {
+    render: FormFieldRenderFn<TFieldValues>;
+} & FormFieldProps<TFieldValues, TContext, TTransformedValues>;
 
-export default function FormFieldWrapper<T extends FieldValues>({
+export default function FormFieldWrapper<
+    TFieldValues extends FieldValues = FieldValues,
+    TContext = undefined,
+    TTransformedValues extends TFieldValues = TFieldValues
+>({
     form,
     name,
     label,
@@ -39,7 +51,7 @@ export default function FormFieldWrapper<T extends FieldValues>({
     description,
     className,
     render,
-}: FormFieldWrapperProps<T>) {
+}: FormFieldWrapperProps<TFieldValues, TContext, TTransformedValues>) {
     return (
         <FormField
             control={form.control}

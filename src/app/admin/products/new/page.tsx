@@ -2,10 +2,8 @@ import { AdminbreadcrumbsSetter } from "@/components/admin/AdminBreadcrumbs";
 import ProductForm from "@/components/forms/ProductForm";
 import {
     Card,
-    CardAction,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
@@ -28,12 +26,10 @@ export default function NewProductPage() {
                 <CardHeader>
                     <CardTitle>Novo Produto</CardTitle>
                     <CardDescription>Crie um novo produto</CardDescription>
-                    <CardAction>Card Action</CardAction>
                 </CardHeader>
                 <CardContent>
                     <ProductForm />
                 </CardContent>
-                <CardFooter>Footer</CardFooter>
             </Card>
         </div>
     );
