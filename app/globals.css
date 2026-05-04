@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+/* Botões */
+.btn-primary {
+  padding: 12px 24px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 200ms;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #1f2937;
+}
+
+.btn-secondary {
+  padding: 12px 24px;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 200ms;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-whatsapp {
+  padding: 12px 24px;
+  background-color: #16a34a;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 200ms;
+  display: inline-block;
+}
+
+.btn-whatsapp:hover {
+  background-color: #15803d;
+}
+
+/* Container */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Seção */
+.section {
+  padding: 48px 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 112px 0;
+  }
+}
+
+/* Hover effects */
+.hover-scale {
+  transition: transform 300ms;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
