@@ -1,41 +1,44 @@
 export function ValueProps() {
   const values = [
     {
-      icon: "✨",
+      number: "01",
       title: "Exclusividade",
-      description: "Nada de roupas iguais em todo mundo",
+      description: "Nada de roupas iguais em todo mundo. Cada peça é única.",
     },
     {
-      icon: "👗",
+      number: "02",
       title: "Curadoria",
-      description: "Cada peça é escolhida com cuidado",
+      description: "Cada peça é escolhida com critério e cuidado editorial.",
     },
     {
-      icon: "💰",
+      number: "03",
       title: "Preço Justo",
-      description: "Qualidade acessível",
+      description: "Qualidade e exclusividade com um preço que cabe no bolso.",
     },
     {
-      icon: "❤️",
-      title: "Atendimento Próximo",
-      description: "Atendimento humano e personalizado",
+      number: "04",
+      title: "Atendimento",
+      description: "Atendimento humano, próximo e verdadeiramente personalizado.",
     },
   ];
 
   return (
-    <section className="section bg-white">
+    <section className="section bg-[#F5F5F5]">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
           {values.map((value, index) => (
             <div
               key={index}
-              className="p-8 text-center hover-scale rounded-lg border border-gray-100 hover:border-[#D4AF37] transition-all duration-300"
+              className="bg-[#F5F5F5] p-10 group hover:bg-white transition-colors duration-300"
             >
-              <div className="text-5xl mb-4">{value.icon}</div>
-              <h3 className="text-xl font-serif font-semibold mb-2">
+              <div className="w-8 h-px bg-[#D4AF37] mb-8 group-hover:w-14 transition-all duration-500" />
+              <p className="text-[0.62rem] tracking-[0.35em] uppercase text-[#D4AF37] mb-3">
+                {value.number}
+              </p>
+              <h3 className="font-serif text-xl font-light mb-4">
                 {value.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 {value.description}
               </p>
             </div>

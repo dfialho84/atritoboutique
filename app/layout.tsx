@@ -4,32 +4,34 @@ import "./globals.css";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
+    subsets: ["latin"],
+    variable: "--font-playfair",
 });
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+    subsets: ["latin"],
+    variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "ATRITO | Curadoria de Roupas Exclusivas",
-  description:
-    "Estilo único, sem complicação. Peças escolhidas com cuidado para quem quer se vestir bem.",
+    title: "Atrito | Curadoria de Roupas Exclusivas",
+    description:
+        "Estilo único, sem complicação. Peças escolhidas com cuidado para quem quer se vestir bem.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="pt-BR">
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
-        {children}
-        <WhatsAppButton />
-      </body>
-    </html>
-  );
+    return (
+        <html lang="pt-BR">
+            <body
+                className={`${inter.variable} ${playfair.variable} font-sans`}
+            >
+                {children}
+                <WhatsAppButton />
+            </body>
+        </html>
+    );
 }
