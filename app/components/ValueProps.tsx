@@ -27,7 +27,7 @@ export function ValueProps() {
     ];
 
     return (
-        <section className="section bg-off-white">
+        <section className="section bg-off-white" id="valueprops">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
                     {values.map((value, index) => (
@@ -37,7 +37,7 @@ export function ValueProps() {
                         >
                             {/* Linha dourada expande no hover — elemento decorativo, não de espaço */}
                             <div className="w-8 h-px bg-gold mb-6 group-hover:w-14 transition-all duration-500" />
-                            <p className="text-xs tracking-normal uppercase text-gold mb-2">
+                            <p className="text-xs tracking-spaced uppercase text-gold mb-2">
                                 {value.number}
                             </p>
                             <h3 className="font-serif text-xl font-light mb-3">

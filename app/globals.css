@@ -14,6 +14,13 @@
     --font-serif: var(--font-playfair), serif;
     --font-sans: var(--font-inter), sans-serif;
 
+    /* letter-spacing */
+    --tracking-spaced: 0.35em;
+    --tracking-extra-spaced: 0.4em;
+
+    /* font-size */
+    --text-tiny: 0.62rem;
+
     /* colors */
     --color-gold: #d4af37;
     --color-black: #000000;
@@ -114,6 +121,7 @@ body {
 /* Section label */
 .section-label {
     font-size: 0.65rem;
+    /* font-size: 1rem; */
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: #d4af37;
@@ -141,7 +149,7 @@ body {
 }
 
 /* Seção */
-.section {
+/* .section {
     padding: 64px 0;
 }
 
@@ -155,4 +163,8 @@ body {
     .section {
         padding: 104px 0;
     }
+} */
+
+.section {
+    padding: 32px 0;
 }

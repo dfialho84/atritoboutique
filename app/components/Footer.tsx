@@ -1,30 +1,30 @@
 export function Footer() {
     return (
         <footer className="bg-black text-white">
-            <div className="w-full h-px bg-[#D4AF37] opacity-20" />
-            <div className="container py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="w-full h-px bg-gold opacity-20" />
+            <div className="container ">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 my-16">
                     {/* Brand */}
-                    <div>
-                        <h3 className="font-andes text-2xl font-bold tracking-tight mb-3">
+                    <div className="text-center md:text-left">
+                        <h3 className="font-andes text-2xl font-normal tracking-wide mb-3">
                             Atrito
                         </h3>
                         <p className="text-gray-500 text-xs leading-relaxed tracking-wide">
-                            Curadoria de roupas exclusivas,
+                            Roupas exclusivas,
                             <br />
                             com preço justo e atendimento próximo
                         </p>
                     </div>
 
                     {/* Links */}
-                    <div>
-                        <h4 className="text-[0.62rem] tracking-[0.3em] uppercase text-[#D4AF37] mb-5">
+                    <div className="text-center md:text-left">
+                        <h4 className="text-tiny tracking-spaced uppercase text-gold mb-5">
                             Sobre
                         </h4>
                         <ul className="space-y-3 text-gray-500 text-xs">
                             <li>
                                 <a
-                                    href="#"
+                                    href="#about"
                                     className="hover:text-white transition-colors duration-200"
                                 >
                                     Sobre nós
@@ -32,7 +32,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#valueprops"
                                     className="hover:text-white transition-colors duration-200"
                                 >
                                     Diferenciais
@@ -40,7 +40,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#comocomprar"
                                     className="hover:text-white transition-colors duration-200"
                                 >
                                     Como comprar
@@ -50,8 +50,8 @@ export function Footer() {
                     </div>
 
                     {/* Contact */}
-                    <div>
-                        <h4 className="text-[0.62rem] tracking-[0.3em] uppercase text-[#D4AF37] mb-5">
+                    <div className="text-center md:text-left">
+                        <h4 className="text-tiny tracking-spaced uppercase text-gold mb-5">
                             Contato
                         </h4>
                         <ul className="space-y-3 text-gray-500 text-xs">
@@ -78,15 +78,15 @@ export function Footer() {
                                     href="mailto:contato@atrito.com"
                                     className="hover:text-white transition-colors duration-200"
                                 >
-                                    contato@atrito.com
+                                    atritoboutique@gmail.com
                                 </a>
                             </li>
                         </ul>
                     </div>
 
                     {/* Social */}
-                    <div>
-                        <h4 className="text-[0.62rem] tracking-[0.3em] uppercase text-[#D4AF37] mb-5">
+                    <div className="text-center md:text-left">
+                        <h4 className="text-tiny tracking-spaced uppercase text-gold mb-5">
                             Redes Sociais
                         </h4>
                         <ul className="space-y-3 text-gray-500 text-xs">
@@ -102,7 +102,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="https://facebook.com"
+                                    href="https://www.facebook.com/atritovicosa/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-white transition-colors duration-200"
