@@ -12,7 +12,7 @@ export function Hero() {
                     Atrito
                 </h1>
 
-                <p className="text-xs tracking-widest uppercase text-gold mb-2">
+                <p className="text-tiny tracking-spaced uppercase text-gold mb-2">
                     Boutique
                 </p>
 

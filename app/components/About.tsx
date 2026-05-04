@@ -15,11 +15,13 @@ export function About() {
                     </div>
 
                     {/* Content — label, divider e h2 como bloco coeso; depois o texto respira */}
-                    <div>
-                        <span className="section-label">Nossa História</span>
-                        <div className="w-8 h-px bg-gold mb-6" />
+                    <div className="text-center md:text-left">
+                        <div className="section-label">Nossa História</div>
+                        <div className="flex justify-center md:justify-start">
+                            <div className="w-8 h-px bg-gold mb-6" />
+                        </div>
 
-                        <h2 className="text-xl md:text-3xl font-serif font-light mb-8 leading-tight">
+                        <h2 className="text-3xl md:text-4xl font-serif font-light mb-8 leading-tight">
                             Sobre a Atrito
                         </h2>
 
@@ -33,7 +35,7 @@ export function About() {
                                 cada cliente — seu estilo, seu momento, sua
                                 personalidade.
                             </p>
-                            <p className="border-l border-gold pl-5 text-gray-800 tracking-widest uppercase">
+                            <p className="border-l border-gold pl-5 text-gray-800 tracking-widest italic">
                                 Por isso, quem compra na Atrito volta. Não só
                                 pelas peças, mas pela experiência.
                             </p>
