@@ -1,0 +1,47 @@
+export function Gallery() {
+    const items = Array.from({ length: 6 }, (_, i) => ({ id: i + 1 }));
+
+    return (
+        <section className="section bg-off-white">
+            <div className="container">
+                {/* Header block: label → divider → h2 → subtitle, tudo coeso */}
+                <div className="text-center mb-12">
+                    <span className="section-label">Looks & Destaques</span>
+                    <div className="w-8 h-px bg-gold mx-auto mb-5" />
+                    <h2 className="text-3xl md:text-4xl font-serif font-light mb-3">
+                        Inspiração & Estilo
+                    </h2>
+                    <p className="text-gray-500 text-sm max-w-sm mx-auto">
+                        Veja como nossas clientes combinam as peças Atrito
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
+                    {items.map((item) => (
+                        <div
+                            key={item.id}
+                            className="aspect-square overflow-hidden bg-gray-200 cursor-pointer group relative"
+                        >
+                            <div className="w-full h-full bg-linear-to-br from-gray-200 to-gray-300 group-hover:scale-105 transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-25 transition-opacity duration-500" />
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center mt-12">
+                    <p className="text-tiny tracking-extra-spaced uppercase text-gray-400 mb-5">
+                        Acompanhe nossas novidades
+                    </p>
+                    <a
+                        href="https://www.instagram.com/atritoboutique/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary"
+                    >
+                        @atritoboutique
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
+}
