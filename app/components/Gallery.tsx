@@ -4,13 +4,14 @@ export function Gallery() {
   return (
     <section className="section bg-[#F5F5F5]">
       <div className="container">
-        <div className="text-center mb-16">
+        {/* Header block: label → divider → h2 → subtitle, tudo coeso */}
+        <div className="text-center mb-12">
           <span className="section-label">Looks & Destaques</span>
-          <div className="w-8 h-px bg-[#D4AF37] mx-auto mb-8" />
-          <h2 className="text-4xl md:text-5xl font-serif font-light mb-4">
+          <div className="w-8 h-px bg-[#D4AF37] mx-auto mb-5" />
+          <h2 className="text-4xl md:text-5xl font-serif font-light mb-3">
             Inspiração & Estilo
           </h2>
-          <p className="text-gray-500 text-sm tracking-wide max-w-sm mx-auto">
+          <p className="text-gray-500 text-sm max-w-sm mx-auto">
             Veja como nossas clientes combinam as peças Atrito
           </p>
         </div>
@@ -27,8 +28,8 @@ export function Gallery() {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-[0.62rem] tracking-[0.4em] uppercase text-gray-400 mb-6">
+        <div className="text-center mt-12">
+          <p className="text-[0.62rem] tracking-[0.4em] uppercase text-gray-400 mb-5">
             Acompanhe nossas novidades
           </p>
           <a

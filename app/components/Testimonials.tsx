@@ -20,29 +20,30 @@ export function Testimonials() {
   return (
     <section className="section bg-white">
       <div className="container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="section-label">Depoimentos</span>
-          <div className="w-8 h-px bg-[#D4AF37] mx-auto mb-8" />
+          <div className="w-8 h-px bg-[#D4AF37] mx-auto mb-5" />
           <h2 className="text-4xl md:text-5xl font-serif font-light">
             Quem compra, recomenda
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="p-10 border border-gray-100 hover:border-[#D4AF37] transition-colors duration-400 relative"
+              className="p-8 border border-gray-100 hover:border-[#D4AF37] transition-colors duration-300 relative"
             >
               <span className="font-serif text-7xl text-[#D4AF37] leading-none opacity-30 absolute top-4 left-7 select-none">
                 "
               </span>
 
-              <p className="font-serif italic text-gray-600 leading-relaxed mt-8 mb-8 text-[0.95rem]">
+              {/* Texto fica próximo da aspas — relação visual clara */}
+              <p className="font-serif italic text-gray-600 leading-relaxed mt-6 mb-6 text-[0.95rem]">
                 {testimonial.text}
               </p>
 
-              <div className="w-6 h-px bg-[#D4AF37] mb-4" />
+              <div className="w-6 h-px bg-[#D4AF37] mb-3" />
               <p className="text-[0.62rem] tracking-[0.25em] uppercase text-gray-400">
                 {testimonial.author}
               </p>
@@ -50,7 +51,7 @@ export function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-10 text-center">
           <p className="text-[0.62rem] tracking-[0.35em] uppercase text-gray-400">
             Mais de 100 clientes satisfeitas · @atritoboutique
           </p>

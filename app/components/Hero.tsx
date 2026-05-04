@@ -4,19 +4,23 @@ export function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#111_0%,_#000_70%)]" />
 
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-8">
-                <div className="w-12 h-px bg-[#D4AF37] mb-12" />
+                {/* Top divider — menor espaço: estamos no início, logo abaixo há o logo grande */}
+                <div className="w-12 h-px bg-[#D4AF37] mb-10" />
 
-                <h1 className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-andes font-bold tracking-tight leading-none mb-4">
+                {/* Logo + label são uma unidade, espaçamento apertado entre eles */}
+                <h1 className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-andes font-bold tracking-tight leading-none mb-3">
                     Atrito
                 </h1>
 
-                <p className="text-[0.62rem] tracking-[0.55em] uppercase text-[#D4AF37] mb-12">
+                <p className="text-[0.62rem] tracking-[0.55em] uppercase text-[#D4AF37] mb-8">
                     Boutique de Curadoria
                 </p>
 
-                <div className="w-12 h-px bg-[#D4AF37] mb-12" />
+                {/* Bottom divider — pausa antes do tagline */}
+                <div className="w-12 h-px bg-[#D4AF37] mb-10" />
 
-                <p className="font-serif italic text-gray-400 text-xl md:text-2xl leading-relaxed mb-16 max-w-lg">
+                {/* Tagline — mais próxima dos botões (são a mesma ação) */}
+                <p className="font-serif italic text-gray-400 text-xl md:text-2xl leading-relaxed mb-10 max-w-lg">
                     Peças escolhidas com cuidado,
                     <br />
                     para quem quer se vestir bem

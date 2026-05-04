@@ -29,13 +29,14 @@ export function ValueProps() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-[#F5F5F5] p-10 group hover:bg-white transition-colors duration-300"
+              className="bg-[#F5F5F5] p-8 group hover:bg-white transition-colors duration-300"
             >
-              <div className="w-8 h-px bg-[#D4AF37] mb-8 group-hover:w-14 transition-all duration-500" />
-              <p className="text-[0.62rem] tracking-[0.35em] uppercase text-[#D4AF37] mb-3">
+              {/* Linha dourada expande no hover — elemento decorativo, não de espaço */}
+              <div className="w-8 h-px bg-[#D4AF37] mb-6 group-hover:w-14 transition-all duration-500" />
+              <p className="text-[0.62rem] tracking-[0.35em] uppercase text-[#D4AF37] mb-2">
                 {value.number}
               </p>
-              <h3 className="font-serif text-xl font-light mb-4">
+              <h3 className="font-serif text-xl font-light mb-3">
                 {value.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
