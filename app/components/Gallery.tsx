@@ -39,7 +39,7 @@ export function Gallery() {
             Quer ver mais? Acompanhe nossas novidades no Instagram
           </p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/atritoboutique/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-block"

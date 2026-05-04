@@ -39,7 +39,7 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <a
-                  href="https://wa.me/553183572204"
+                  href="https://wa.me/5531983572204"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition"
@@ -49,10 +49,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+553183572204"
+                  href="tel:+553138917796"
                   className="hover:text-white transition"
                 >
-                  (31) 8357-2204
+                  (31) 3891-7796
                 </a>
               </li>
               <li>
@@ -72,7 +72,7 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/atritoboutique/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition"

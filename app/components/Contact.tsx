@@ -15,7 +15,7 @@ export function Contact() {
               Prefere conversar pelo WhatsApp? Estamos sempre disponíveis!
             </p>
             <a
-              href="https://wa.me/553183572204?text=Oi,%20vim%20pelo%20site%20e%20quero%20ver%20as%20novidades"
+              href="https://wa.me/5531983572204?text=Oi,%20vim%20pelo%20site%20e%20quero%20ver%20as%20novidades"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp inline-block"
@@ -32,10 +32,10 @@ export function Contact() {
               Prefere ligar? Estamos disponíveis também
             </p>
             <a
-              href="tel:+553183572204"
+              href="tel:+553138917796"
               className="btn-primary inline-block"
             >
-              (31) 8357-2204
+              (31) 3891-7796
             </a>
           </div>
 

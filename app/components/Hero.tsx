@@ -25,7 +25,7 @@ export function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
           <a
-            href="https://wa.me/553183572204?text=Oi,%20vim%20pelo%20site%20e%20quero%20ver%20as%20novidades"
+            href="https://wa.me/5531983572204?text=Oi,%20vim%20pelo%20site%20e%20quero%20ver%20as%20novidades"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"
@@ -33,7 +33,7 @@ export function Hero() {
             💬 Falar no WhatsApp
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/atritoboutique/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"

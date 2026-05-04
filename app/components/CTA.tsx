@@ -13,7 +13,7 @@ export function CTA() {
         </p>
 
         <a
-          href="https://wa.me/553183572204?text=Oi,%20vim%20pelo%20site%20e%20quero%20ver%20as%20novidades"
+          href="https://wa.me/5531983572204?text=Oi,%20vim%20pelo%20site%20e%20quero%20ver%20as%20novidades"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-whatsapp inline-block text-lg"
