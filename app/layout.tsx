@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Atrito | Curadoria de Roupas Exclusivas",
+    title: "Atrito",
     description:
         "Estilo único, sem complicação. Peças escolhidas com cuidado para quem quer se vestir bem.",
 };
