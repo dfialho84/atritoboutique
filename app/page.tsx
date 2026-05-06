@@ -11,7 +11,7 @@ import { SnapSection } from "./components/SnapSection";
 
 export default function Home() {
     return (
-        <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <main className="h-screen overflow-y-scroll snap-y snap-proximity scroll-smooth">
             <SnapSection>
                 <Hero />
             </SnapSection>
@@ -36,9 +36,7 @@ export default function Home() {
             <SnapSection>
                 <CTA />
             </SnapSection>
-            <SnapSection align="start">
-                <Footer />
-            </SnapSection>
+            <Footer />
         </main>
     );
 }
