@@ -46,12 +46,12 @@ export function Hero() {
                 </div>
             </div>
 
-            {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-                <span className="text-[0.55rem] tracking-[0.45em] uppercase text-gray-600">
-                    Scroll
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+                <span className="text-xtiny tracking-extra-spaced uppercase text-gray-600">
+                    Rolar
                 </span>
-                <div className="w-px h-10 bg-gradient-to-b from-gray-600 to-transparent" />
-            </div> */}
+                <div className="w-px h-10 bg-linear-to-b from-gray-600 to-transparent" />
+            </div>
         </section>
     );
 }

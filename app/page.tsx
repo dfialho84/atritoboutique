@@ -7,19 +7,38 @@ import { HowItWorks } from "./components/HowItWorks";
 import { Contact } from "./components/Contact";
 import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
+import { SnapSection } from "./components/SnapSection";
 
 export default function Home() {
-  return (
-    <main className="bg-white">
-      <Hero />
-      <ValueProps />
-      <About />
-      <Gallery />
-      <Testimonials />
-      <HowItWorks />
-      <Contact />
-      <CTA />
-      <Footer />
-    </main>
-  );
+    return (
+        <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+            <SnapSection>
+                <Hero />
+            </SnapSection>
+            <SnapSection>
+                <ValueProps />
+            </SnapSection>
+            <SnapSection>
+                <About />
+            </SnapSection>
+            <SnapSection>
+                <Gallery />
+            </SnapSection>
+            <SnapSection>
+                <Testimonials />
+            </SnapSection>
+            <SnapSection>
+                <HowItWorks />
+            </SnapSection>
+            <SnapSection>
+                <Contact />
+            </SnapSection>
+            <SnapSection>
+                <CTA />
+            </SnapSection>
+            <SnapSection align="start">
+                <Footer />
+            </SnapSection>
+        </main>
+    );
 }
